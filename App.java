@@ -26,7 +26,7 @@ public class App{
 
         System.out.println("\nType the item number: ");
         option = inputGetter.nextLine();
-        index = Integer.parseInt(option);
+        index = Integer.parseInt(option) - 1;
 
         return index;
     }
@@ -59,6 +59,7 @@ public class App{
 
     private void archive() {
         for (int i = this.todoList.itemList.size() - 1; i > -1; i--) {
+
             if (this.todoList.itemList.get(i).getIsDone()) {
                 this.todoList.itemList.remove(i);
             }
@@ -81,6 +82,7 @@ public class App{
                     break;
 
                 case "2":
+
                 try {
                     application.markItem();
                 } catch (IndexOutOfBoundsException | NumberFormatException e) {
@@ -100,7 +102,6 @@ public class App{
                 default:
                     System.out.println("There is no such option");
                     break;
-
             }
         }
     }

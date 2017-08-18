@@ -22,12 +22,15 @@ public class TodoList{
 
     public String getStringTodoList() {
         String result = "\nItems to do: \n";
-        int index = 0;
+        int index = 1;
+
         for (TodoItem item: this.itemList) {
             result += String.format("%d. ", index);
+
             if (item.getIsDone()) {
                 result += "[x] ";
             }
+            
             result += String.format("%s%n", item.getName());
             index++;
         }
